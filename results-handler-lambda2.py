@@ -1,8 +1,5 @@
 import json
 import requests
-import logging
-
-# logger = logging.getLogger
 
 
 def lambda_handler(event, context):
@@ -10,28 +7,30 @@ def lambda_handler(event, context):
     try:
         # Extract patient ID from the incoming request
         patient_id = int(event.get('pathParameters', {}).get('patient_id'))
-        print("Incoming patient id HERE:", patient_id)
-
-        # Extract the body from the incoming event
-        request_body = json.loads(event.get('body', '{}'))
-
-        # Convert the request body to JSON using double quotes for strings
-        request_body_json = json.dumps(request_body)
 
         # Debug
-        print("First POST Request Payload:", request_body_json)
+        print("Incoming patient id HERE:", patient_id)
 
+        # # Extract the body from the incoming event
+        # request_body = event.get('body', '{}')
+        request_body = json.loads(event['body'])
+
+        # Convert the request body to JSON using double quotes for strings
+        # request_body_json = json.dumps(request_body)
+
+        # Debug
+        print("First POST Request Payload:", request_body)
+
+        # images = {"images": ["AOTLRTDWGVPKJHWYXQMSKDDPSQFKFTTEPPHFG", "NWLGBMHCEHIBYMKOPKBHQDEPPWOCCHNUOLVZFLSEMU"]}
         # Make a POST request to the API endpoint using the extracted patient_id and request body
-        response = requests.post(f'http://ec2-35-177-47-173.eu-west-2.compute.amazonaws.com/patients/{patient_id}/screen', json=request_body_json, headers={
+        response = requests.post(f'http://35.177.47.173/patients/{patient_id}/screen', json=request_body, headers={
                                  'Content-type': 'application/json', 'Authorization': 'Basic dGVzdC1hY2NvdW50OnN1cGVyc2VjcmV0'})
 
-        # logger.logging(request.url)
-        # logger.logging(request.headers)
-        # logger.logging(request.body)
+        print(response.status_code, response.text)
 
         # Check the response from the POST request
         if response.status_code == 200:
-            api_data = response.json
+            api_data = response.json()
             print("api data:", api_data)
 
             # Include the patient_id in the response data
@@ -39,7 +38,8 @@ def lambda_handler(event, context):
 
             # Include the request body data in the response
             api_data['request_body'] = request_body
-
+            # print(api_data)
+            return_value = api_data['request_body'] = request_body
             # Create the POST request body with title, body, and modified API response
             post_data = {
                 "title": "Screen Results",
@@ -49,6 +49,7 @@ def lambda_handler(event, context):
                 "staff_id": 27  # Staff ID (yours)
             }
 
+            # Debug
             print("body in request", post_data)
 
             # Make a POST request to forward the modified response
@@ -75,7 +76,8 @@ def lambda_handler(event, context):
                 # Handle non-201 status codes from the POST request if necessary
                 return {
                     'statusCode': post_response.status_code,
-                    'body': json.dumps({'error': 'Failed to forward response.'}),
+                    'body': response.text,
+                    # 'body': json.dumps({'message': 'Successfully forwarded to the HOSP Server.'})
                     'headers': {
                         'Content-Type': 'application/json'
                     }
@@ -94,7 +96,7 @@ def lambda_handler(event, context):
         # Handle any unexpected exceptions that might occur during the execution
         print("Error:", str(e))
         return {
-            'statusCode': 500,
+            # 'statusCode': 500,
             'body': json.dumps({'error': 'Internal Server Error'}),
             'headers': {
                 'Content-Type': 'application/json'
