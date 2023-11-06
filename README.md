@@ -6,7 +6,7 @@ Reliability Project
 
 ## Project Overview
 
-In this project, our team was commissioned by a organization that delivers software and services to several veterinary hospitals. Our primary goal was to enhance the reliability of their existing application, HOSP, while ensuring its core functionality remained intact. Additionally, we undertook the responsibility of implementing various improvements and incorporating new features to elevate the overall user experience.
+In this project, our team was commissioned by a organisation that delivers software and services to several veterinary hospitals. Our primary goal was to enhance the reliability of their existing application, HOSP, while ensuring its core functionality remained intact. Additionally, we undertook the responsibility of implementing various improvements and incorporating new features to elevate the overall user experience.
 
 
 ## The HOSP system
@@ -32,7 +32,7 @@ To tackle the challenge of failed API requests, we implemented an NGINX reverse 
 With the system's reliability significantly enhanced, we shifted our focus to implementing several crucial improvements:
 
 1. **Enhanced Security with HTTPS:**
-   To reinforce the system's security, we prioritized implementing the HTTPS protocol. This crucial step involved deploying an AWS CloudFront CDN and enforcing encrypted communication across all traffic. By transitioning to HTTPS, we significantly enhanced data privacy and ensured the safeguarding of sensitive information exchanged within the system.
+   To reinforce the system's security, we prioritised implementing the HTTPS protocol. This crucial step involved deploying an AWS CloudFront CDN and enforcing encrypted communication across all traffic. By transitioning to HTTPS, we significantly enhanced data privacy and ensured the safeguarding of sensitive information exchanged within the system.
 
     Collaborating closely with corporate IT, we planned the migration process. Our objective was to minimize downtime during the transition to the new domain. We directed traffic to the new HTTPS-enabled domain, maintaining uninterrupted service for users while fortifying the system's overall security.
 
