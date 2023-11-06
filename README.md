@@ -20,3 +20,6 @@ Unfortunately we didnt have access to the source code due to a licensing issue, 
 Our initial focus was on enhancing the system's reliability. To address user-reported issues, we delved into the problem by utilizing Amazon CloudWatch to analyse the application logs. Through this investigation, we discovered a significant volume of failed API requests occurring at the server endpoints. This crucial insight allowed us to pinpoint the root causes of the issues users were experiencing.
 
 
+## Implementation of NGINX Reverse Proxy Server
+
+To tackle the challenge of failed API requests, we implemented an NGINX reverse proxy server deployed on an AWS EC2 instance. This strategic deployment was designed to automatically retry the failed requests, resulting in a remarkable reduction in the overall number of failures. By leveraging this solution, we effectively enhanced the system's resilience and ensured a smoother user experience.
