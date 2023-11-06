@@ -2,12 +2,11 @@
  Cloud Reliability Team Project
 </h1>
 
-<p align='center'>This repo contains the files for my final project at Makers Academy as part of the Cloud/DevOps Engineering specailism track.</p>
+<p align='center'>This repo contains the files for my final project at Makers Academy as part of the Cloud/DevOps Engineering specialism track.</p>
 
-## The task
-During this project my team and I were hired by an orginisation that provides software and services to a number of veterinary hospitals.
+## Project Overview
 
-We were tasked with preserving the functionality of the system while increasing it's reliabilty and implementing improvements and new features.
+In this project, our team was commissioned by a organization that delivers software and services to several veterinary hospitals. Our primary goal was to enhance the reliability of their existing application, HOSP, while ensuring its core functionality remained intact. Additionally, we undertook the responsibility of implementing various improvements and incorporating new features to elevate the overall user experience.
 
 
 ## The system
