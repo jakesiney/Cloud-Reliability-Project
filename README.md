@@ -17,7 +17,7 @@ Unfortunately we didnt have access to the source code due to a licensing issue, 
 
 ## Approach and Investigation
 
-Our initial focus was on enhancing the system's reliability. To address user-reported issues, we delved into the problem by utilizing Amazon CloudWatch to analyse the application logs. Through this investigation, we discovered a significant volume of failed API requests occurring at the server endpoints. This crucial insight allowed us to pinpoint the root causes of the issues users were experiencing.
+Our initial focus was on enhancing the system's reliability. To address user reported issues, we delved into the problem by utilising Amazon CloudWatch to analyse the application logs. Through this investigation, we discovered a significant volume of failed API requests occurring at the server endpoints. This crucial insight allowed us to pinpoint the root causes of the issues users were experiencing.
 
 
 ## Implementation of NGINX Reverse Proxy Server
