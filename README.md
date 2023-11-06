@@ -1,5 +1,5 @@
 <h1 align="center">
- Cloud Reliability Team Project
+Reliability Project
 </h1>
 
 <p align='center'>This repo contains the files for my final project at Makers Academy as part of the Cloud/DevOps Engineering specialism track.</p>
@@ -23,3 +23,21 @@ Our initial focus was on enhancing the system's reliability. To address user-rep
 ## Implementation of NGINX Reverse Proxy Server
 
 To tackle the challenge of failed API requests, we implemented an NGINX reverse proxy server deployed on an AWS EC2 instance. This strategic deployment was designed to automatically retry the failed requests, resulting in a remarkable reduction in the overall number of failures. By leveraging this solution, we effectively enhanced the system's resilience and ensured a smoother user experience.
+
+![dashboard](/diagrams/dashboard.png)
+
+
+## Implemented Improvements
+
+With the system's reliability significantly enhanced, we shifted our focus to implementing several crucial improvements:
+
+1. **Enhanced Security with HTTPS:**
+   One of the first enhancements involved securing the incoming traffic by implementing HTTPS protocol. This ensured encrypted communication, enhancing data privacy and safeguarding sensitive information exchanged within the system.
+
+2. **X-Ray Results Integration:**
+   Responding to a specific request from hospital nurses, we introduced a feature enabling the saving of X-Ray results directly within the patient notes. Previously, these results were not archived on the HOSP server, and this enhancement streamlined the process, providing a comprehensive patient record.
+
+3. **Audit Trail Functionality:**
+   To bolster system transparency and security, we developed an audit trail feature. This functionality empowered system administrators to track and monitor all user activities comprehensively. By providing an overview of user interactions, it became easier to identify any potential security breaches promptly and take necessary actions.
+
+These improvements collectively elevated the system's functionality, user experience, and security standards, ensuring a robust and seamless operation for both hospital staff and patients.
