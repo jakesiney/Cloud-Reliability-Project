@@ -11,5 +11,5 @@ We were tasked with preserving the functionality of the system while increasing 
 
 
 ## The system
-The application is called HOSP and unfortunately we didnt have access to the source code, we did have access to its load balancer the API documentation.</br>
+The application is called HOSP and unfortunately we didnt have access to the source code, we did have access to its load balancer and the API documentation.</br>
 ![HOSP Diagram](/diagrams/HOSP-diagram.png)
