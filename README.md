@@ -42,7 +42,12 @@ With the system's reliability significantly enhanced, we shifted our focus to im
 3. **Audit Trail Functionality:**
    To bolster system transparency and security, we developed an audit trail feature. This functionality allowed system administrators to track and monitor all user activities. By providing an overview of user interactions, it became easier to identify any potential security breaches promptly and take necessary actions. The audit trail feature was implemented using an AWS Lambda function. We established a new API route, designed to query AWS Athena using a specific SQL command against a CloudWatch database. The results of this query were then sent back as a unique URL, allowing them to download the audit trail as a CSV file for detailed analysis.
 
-These improvements collectively elevated the system's functionality, user experience, and security standards, ensuring a robust and seamless operation for both hospital staff and patients.
+
+
+![Improvements diagram](/diagrams/cloudfront-lambdas.jpg)
+
+
+These improvements collectively elevated the system's functionality, user experience, and security standards, ensuring a robust and seamless operation for both hospital staff and patients. By leveraging serverless technology, we ensured the system could effortlessly adapt to growing demands without the hassle of traditional server maintenance. This approach not only enhanced scalability but also significantly reduced operational overheads. Hospital staff and patients benefited from a consistently reliable, high-performing system, allowing them to focus on their core tasks without interruptions.
 
 
 
