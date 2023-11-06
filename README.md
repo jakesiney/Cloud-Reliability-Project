@@ -52,7 +52,8 @@ These improvements collectively elevated the system's functionality, user experi
 
 
 
-
+## Final System Diagram
+![Final diagram](/diagrams/Final-diagram.jpg)
 
 
 
