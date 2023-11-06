@@ -50,11 +50,15 @@ def lambda_handler(event, context):
         )
 
         # print(f"Your HOSP audit is available at: {presigned_url}")
-
+        html_response = f'<html><body><h1>Your HOSP audit is here: <a href="{presigned_url}">Download CSV</a></h1></body></html>'
         # You can now include 'presigned_url' in your Lambda function response
         return {
             'statusCode': 200,
-            'body': f'Your HOSP audit is available at: {presigned_url}',
+            'headers': {'content-type': 'text/html'},
+            'body': html_response
+
+
+            # 'body': f'Your HOSP audit is available at: {presigned_url}',
             # 'headers': {
             #     'Content-Disposition': 'attachment; filename=hosp_audit.csv'}
             # 'body': f'Your HOSP audit is available at: {presigned_url}'
